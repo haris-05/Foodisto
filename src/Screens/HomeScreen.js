@@ -9,6 +9,7 @@ import {
   ExpandableIngredientView,
   SectionView,
   ProductCard,
+  Footer,
 } from '../Components';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -50,6 +51,7 @@ const HomeScreen = () => {
         <SectionView types={types} />
         <ProductCard />
       </ScrollView>
+      <Footer />
     </View>
   );
 };

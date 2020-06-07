@@ -6,3 +6,4 @@ export {default as IngredientItem} from './IngredientItem';
 export {default as ExpandableIngredientView} from './ExpandableIngredientView';
 export {default as SectionView} from './SectionView';
 export {default as ProductCard} from './ProductCard';
+export {default as Footer} from './Footer';
