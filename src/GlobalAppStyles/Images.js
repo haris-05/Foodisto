@@ -2,7 +2,7 @@
 const IMAGES_DIR = '../../assets';
 const images = {
   // loginBackroundImage
-    mainBG: require(`${IMAGES_DIR}/main_img.jpg`),
+    //mainBG: require(`${IMAGES_DIR}/main_img.jpg`),
   // logos
   //appLogo: require(`${IMAGES_DIR}/logo.jpeg`),
 
