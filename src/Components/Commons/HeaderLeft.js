@@ -7,16 +7,15 @@ import {NavigationService} from '../../Services';
 const HeaderLeft = () => {
   return (
     <TouchableOpacity onPress={() => console.log('go back')}>
-    <View style={styles.backArrowViewStyle}>
+      <View style={styles.backArrowViewStyle}>
         <Icon
           name="arrowleft"
           color={Colors.black}
           size={Metrics.images.regular}
           style={styles.iconWrap}
         />
-    </View>
+      </View>
     </TouchableOpacity>
-
   );
 };
 

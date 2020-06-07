@@ -56,8 +56,8 @@ const ProductCard = () => {
   return (
     <View style={styles.productsMainContainer}>
       <AppText
-        paddingStart={Metrics.baseMargin + 5}
-        paddingEnd={Metrics.baseMargin + 5}
+        paddingStart={Metrics.doubleBaseMargin}
+        paddingEnd={Metrics.doubleBaseMargin}
         fontWeight={'600'}
         textColor="#BFBFBF">
         Products
@@ -66,12 +66,10 @@ const ProductCard = () => {
         style={{
           flexDirection: 'row',
           paddingTop: Metrics.baseMargin,
-          paddingHorizontal: Metrics.baseMargin,
+          paddingHorizontal: Metrics.doubleBaseMargin,
         }}>
         <ScrollView
-          style={{
-            paddingBottom: Metrics.baseMargin,
-          }}
+          style={{paddingBottom: Metrics.baseMargin}}
           horizontal={true}
           showsHorizontalScrollIndicator={false}>
           <Product />
@@ -99,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F3F3',
     alignItems: 'center',
     borderRadius: Metrics.baseMargin,
-    marginHorizontal: Metrics.smallMargin,
+    marginHorizontal: Metrics.smallMargin - 2.5,
   },
   imageStyle: {
     height: Metrics.screenWidth / 5,

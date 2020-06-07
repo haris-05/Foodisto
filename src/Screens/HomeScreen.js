@@ -15,11 +15,34 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const types = [
   {
-    name: 'Tomato Ketchup',
+    name: 'Mayo',
     selected: true,
   },
   {
-    name: ' Chill Garlic Ketchup',
+    name: 'Garlic',
+    selected: false,
+  },
+  {
+    name: 'Kethup',
+    selected: false,
+  },
+  {
+    name: 'Chese',
+    selected: false,
+  },
+];
+
+const types1 = [
+  {
+    name: 'Mayo',
+    selected: true,
+  },
+  {
+    name: 'Garlic',
+    selected: false,
+  },
+  {
+    name: 'Kethup',
     selected: false,
   },
 ];
@@ -47,10 +70,10 @@ const HomeScreen = () => {
           isCollapsed={isCollapsed}
           setCollapsed={value => setCollapsed(value)}
         />
-        <SectionView types={types} />
+        <SectionView types={types1} />
         <SectionView types={types} />
         <ProductCard />
-        <View style={{height: Metrics.doubleBaseMargin * 3.5}} />
+        <View style={{height: 80}} />
       </ScrollView>
       <Footer />
     </View>

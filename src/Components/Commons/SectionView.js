@@ -1,34 +1,39 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {RowContainer, AppText} from './AppStyledComponents';
+import {StyleSheet, View, TouchableWithoutFeedback} from 'react-native';
+import {AppText} from './AppStyledComponents';
 import {Colors, Metrics, Fonts} from '../../GlobalAppStyles';
 
-const SectionChip = ({item}) => {
-  const backgroundColor = item.selected ? Colors.white : 'transparent';
+const SectionChip = ({item, value, handler}) => {
+  const backgroundColor = item.name === value ? Colors.white : 'transparent';
   return (
-    <AppText
-      style={{
-        backgroundColor: backgroundColor,
-        borderRadius: 12,
-        borderWidth: Metrics.borderWidth,
-        borderColor: Colors.transparent,
-      }}
-      marginStart={Metrics.baseMargin}
-      marginEnd={Metrics.baseMargin}
-      paddingTop={Metrics.padding}
-      paddingBottom={Metrics.padding}
-      paddingStart={Metrics.smallPadding}
-      paddingEnd={Metrics.smallPadding}
-      textAlign="center"
-      textColor={Colors.black}
-      fontSize={Fonts.size.small}
-      fontWeight="500">
-      {item.name}
-    </AppText>
+    <TouchableWithoutFeedback onPress={() => handler(item.name)}>
+      <View style={{flex: 1}}>
+        <AppText
+          style={{
+            backgroundColor: backgroundColor,
+            borderRadius: 12,
+            borderWidth: Metrics.borderWidth,
+            borderColor: Colors.transparent,
+          }}
+          marginStart={Metrics.baseMargin}
+          marginEnd={Metrics.baseMargin}
+          paddingTop={Metrics.padding}
+          paddingBottom={Metrics.padding}
+          paddingStart={Metrics.smallPadding}
+          paddingEnd={Metrics.smallPadding}
+          textAlign="center"
+          textColor={Colors.black}
+          fontSize={Fonts.size.small}
+          fontWeight="500">
+          {item.name}
+        </AppText>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
 const SectionMainView = ({types}) => {
+  const [value, setValue] = React.useState('Mayo');
   return (
     <View
       style={{
@@ -42,7 +47,7 @@ const SectionMainView = ({types}) => {
         borderColor: Colors.transparent,
       }}>
       {types.map(item => (
-        <SectionChip item={item} />
+        <SectionChip item={item} value={value} handler={val => setValue(val)} />
       ))}
     </View>
   );
@@ -51,7 +56,9 @@ const SectionMainView = ({types}) => {
 const SectionView = ({types}) => {
   return (
     <View style={styles.container}>
-      <AppText marginBottom={Metrics.baseMargin}>Ketchup Type</AppText>
+      <AppText marginBottom={Metrics.baseMargin} textColor={'#BFBFBF'}>
+        Ketchup Type
+      </AppText>
       <SectionMainView types={types} />
     </View>
   );

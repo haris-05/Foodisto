@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {RowContainer, AppText} from './AppStyledComponents';
 import {Colors, Metrics, Fonts} from '../../GlobalAppStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Badge, withBadge} from 'react-native-elements';
 
 const FooterChipItem = () => {
   return (
@@ -21,6 +22,7 @@ const FooterChipItem = () => {
 };
 
 const FooterElement = () => {
+  const BadgedIcon = withBadge(2)(Icon);
   return (
     <View
       style={{
@@ -29,8 +31,8 @@ const FooterElement = () => {
         position: 'absolute',
         bottom: 0,
         backgroundColor: Colors.white,
-        borderTopWidth:0.5,
-        borderColor:'grey',
+        borderTopWidth: 0.5,
+        borderColor: 'grey',
       }}>
       <RowContainer>
         <FooterChipItem />
@@ -41,8 +43,12 @@ const FooterElement = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Icon name="md-cart" size={Metrics.icons.medium} color={'grey'} />
-          <AppText fontSize={Fonts.size.small}>Add to cart</AppText>
+          <View>
+            <Icon name="md-cart" size={Metrics.icons.medium} color={'grey'} />
+            <View style={{position: 'absolute', top: -5, right: -3}}>
+              <BadgedIcon type="ionicon" />
+            </View>
+          </View>
         </View>
       </RowContainer>
     </View>
