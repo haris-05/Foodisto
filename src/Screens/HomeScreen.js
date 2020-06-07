@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Image} from 'react-native';
+import {StyleSheet, View, Image, ScrollView} from 'react-native';
 
 import {Colors, Metrics, Fonts, Images} from '../GlobalAppStyles';
 import {
@@ -8,6 +8,7 @@ import {
   AppHeading,
   ExpandableIngredientView,
   SectionView,
+  ProductCard,
 } from '../Components';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -26,26 +27,29 @@ const HomeScreen = () => {
   const [isCollapsed, setCollapsed] = useState(false);
   return (
     <View style={styles.mainContainer}>
-      <Image source={Images.rollParatha} style={styles.imageStyle} />
-      <RowContainer style={styles.rowStyle}>
-        <AppHeading>Chicken Roll Paratha</AppHeading>
-        <View style={styles.infoIconView}>
-          <Icon name="ios-information" size={Metrics.images.regular} />
-        </View>
-      </RowContainer>
-      <AppText
-        textColor={Colors.secondaryText}
-        marginStart={Metrics.doubleBaseMargin}
-        marginEnd={Metrics.doubleBaseMargin}
-        fontSize={Fonts.size.small}>
-        Ketchup, Mayonnise, Onions, Jalpenos, Cheese + Coke
-      </AppText>
-      <ExpandableIngredientView
-        isCollapsed={isCollapsed}
-        setCollapsed={value => setCollapsed(value)}
-      />
-      <SectionView types={types} />
-      <SectionView types={types} />
+      <ScrollView>
+        <Image source={Images.rollParatha} style={styles.imageStyle} />
+        <RowContainer style={styles.rowStyle}>
+          <AppHeading>Chicken Roll Paratha</AppHeading>
+          <View style={styles.infoIconView}>
+            <Icon name="ios-information" size={Metrics.images.regular} />
+          </View>
+        </RowContainer>
+        <AppText
+          textColor={Colors.secondaryText}
+          marginStart={Metrics.doubleBaseMargin}
+          marginEnd={Metrics.doubleBaseMargin}
+          fontSize={Fonts.size.small}>
+          Ketchup, Mayonnise, Onions, Jalpenos, Cheese + Coke
+        </AppText>
+        <ExpandableIngredientView
+          isCollapsed={isCollapsed}
+          setCollapsed={value => setCollapsed(value)}
+        />
+        <SectionView types={types} />
+        <SectionView types={types} />
+        <ProductCard />
+      </ScrollView>
     </View>
   );
 };
