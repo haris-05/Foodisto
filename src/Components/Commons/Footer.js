@@ -29,16 +29,21 @@ const FooterElement = () => {
         position: 'absolute',
         bottom: 0,
         backgroundColor: Colors.white,
+        borderTopWidth:0.5,
+        borderColor:'grey',
       }}>
       <RowContainer>
         <FooterChipItem />
         <View style={{width: 0.5, height: '100%', backgroundColor: 'grey'}} />
-        <View style={{ width:'40%', justifyContent:'center',alignItems:'center'}}>
-        <Icon  name="md-cart" size={Metrics.icons.medium} color={'grey'}/>
-        <AppText fontSize={Fonts.size.small}>Add to cart</AppText>
+        <View
+          style={{
+            width: '40%',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Icon name="md-cart" size={Metrics.icons.medium} color={'grey'} />
+          <AppText fontSize={Fonts.size.small}>Add to cart</AppText>
         </View>
-        
-      
       </RowContainer>
     </View>
   );
