@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {CheckBox, Divider} from 'react-native-elements';
 import {Colors, Metrics, Fonts, Images} from '../../GlobalAppStyles';
 import {RowContainer, AppText} from './AppStyledComponents';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const IngredentItem = () => {
   return (
@@ -12,11 +12,16 @@ const IngredentItem = () => {
         <AppText>Ketchup</AppText>
         <CheckBox
           containerStyle={styles.checkBoxContainerStyle}
-          checkedColor={Colors.secondary}
           uncheckedIcon={
-            <Icon name="ios-checkbox-outline" size={Metrics.icons.regular} />
+            <Icon name="check-box-outline-blank" size={Metrics.icons.regular} />
           }
-        //   checkedIcon="checksquare"
+          checkedIcon={
+            <Icon
+              name="check-box"
+              size={Metrics.icons.regular}
+              color={Colors.secondary}
+            />
+          }
          // checked
         />
       </RowContainer>
@@ -30,7 +35,6 @@ export default IngredentItem;
 const styles = StyleSheet.create({
   rowStyle: {
     justifyContent: 'space-between',
-    marginStart: Metrics.doubleBaseMargin,
     paddingVertical: Metrics.padding - 5,
   },
   checkBoxContainerStyle: {

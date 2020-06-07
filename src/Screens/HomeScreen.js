@@ -2,10 +2,28 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Image} from 'react-native';
 
 import {Colors, Metrics, Fonts, Images} from '../GlobalAppStyles';
-import {AppText, RowContainer, AppHeading, IngredientItem} from '../Components';
+import {
+  AppText,
+  RowContainer,
+  AppHeading,
+  ExpandableIngredientView,
+  SectionView,
+} from '../Components';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+const types = [
+  {
+    name: 'Tomato Ketchup',
+    selected: true,
+  },
+  {
+    name: ' Chill Garlic Ketchup',
+    selected: false,
+  },
+];
+
 const HomeScreen = () => {
+  const [isCollapsed, setCollapsed] = useState(false);
   return (
     <View style={styles.mainContainer}>
       <Image source={Images.rollParatha} style={styles.imageStyle} />
@@ -22,7 +40,12 @@ const HomeScreen = () => {
         fontSize={Fonts.size.small}>
         Ketchup, Mayonnise, Onions, Jalpenos, Cheese + Coke
       </AppText>
-      <IngredientItem />
+      <ExpandableIngredientView
+        isCollapsed={isCollapsed}
+        setCollapsed={value => setCollapsed(value)}
+      />
+      <SectionView types={types} />
+      <SectionView types={types} />
     </View>
   );
 };
