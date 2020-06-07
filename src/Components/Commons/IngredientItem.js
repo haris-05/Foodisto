@@ -1,15 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CheckBox, Divider} from 'react-native-elements';
-import {Colors, Metrics} from '../../GlobalAppStyles';
+import {Colors, Metrics, Fonts, Images} from '../../GlobalAppStyles';
 import {RowContainer, AppText} from './AppStyledComponents';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const IngredentItem = () => {
+const IngredentItem = ({ingredientItem}) => {
+  const [checked, setChecked] = useState(false);
+  const textColor=ingredientItem.value === 'Onions' ? Colors.error : Colors.black;
   return (
     <View>
       <RowContainer style={styles.rowStyle}>
-        <AppText>Ketchup</AppText>
+        <AppText
+          style={ingredientItem.value === 'Onions' && styles.cutThroughText}
+          textColor={textColor}>
+          {ingredientItem.value}
+        </AppText>
         <CheckBox
           containerStyle={styles.checkBoxContainerStyle}
           uncheckedIcon={
@@ -22,7 +28,9 @@ const IngredentItem = () => {
               color={Colors.secondary}
             />
           }
-          // checked
+          checked={checked}
+          right={true}
+          onPress={() => setChecked(!checked)}
         />
       </RowContainer>
       <Divider />
@@ -42,5 +50,9 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     marginRight: 0,
     padding: 0,
+  },
+  cutThroughText: {
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid',
   },
 });
