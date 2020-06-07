@@ -1,19 +1,29 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import {StyleSheet, View, Image} from 'react-native';
 
-import {Colors, Metrics, Fonts} from '../GlobalAppStyles';
-import {AppText} from '../Components/Commons';
-import {NavigationService} from '../Services';
-import {APP_ROUTES} from '../Navigation';
+import {Colors, Metrics, Fonts, Images} from '../GlobalAppStyles';
+import {AppText, RowContainer, AppHeading, IngredientItem} from '../Components';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const HomeScreen = () => {
   return (
     <View style={styles.mainContainer}>
-      <AppText>Hello</AppText>
-      </View>
+      <Image source={Images.rollParatha} style={styles.imageStyle} />
+      <RowContainer style={styles.rowStyle}>
+        <AppHeading>Chicken Roll Paratha</AppHeading>
+        <View style={styles.infoIconView}>
+          <Icon name="ios-information" size={Metrics.images.regular} />
+        </View>
+      </RowContainer>
+      <AppText
+        textColor={Colors.secondaryText}
+        marginStart={Metrics.doubleBaseMargin}
+        marginEnd={Metrics.doubleBaseMargin}
+        fontSize={Fonts.size.small}>
+        Ketchup, Mayonnise, Onions, Jalpenos, Cheese + Coke
+      </AppText>
+      <IngredientItem />
+    </View>
   );
 };
 
@@ -21,37 +31,26 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    justifyContent: 'center',
+    height: '100%',
+    backgroundColor: Colors.white,
   },
-  rowContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: Metrics.paddingHorizontal,
-  },
-  textStyleLocation: {
-    color: Colors.white,
-    paddingHorizontal: Metrics.paddingHorizontal,
-  },
-  city: {
-    color: Colors.white,
-    fontSize: Fonts.size.h2,
-    marginTop: Metrics.marginTop,
-    paddingHorizontal: Metrics.paddingHorizontal,
-  },
-  live: {
-    position: 'absolute',
-    backgroundColor: 'red',
-    borderRadius: Metrics.buttonRadius,
-    color: Colors.white,
-    paddingHorizontal: Metrics.baseMargin,
-    paddingVertical: Metrics.smallPadding,
-    fontSize: Fonts.size.medium,
-    top: Metrics.doubleBaseMargin * 2.5,
-    right: Metrics.doubleBaseMargin,
-  },
-  image: {
-    flex: 1,
+  imageStyle: {
+    width: '100%',
+    height: '35%',
     resizeMode: 'stretch',
+  },
+  rowStyle: {
+    justifyContent: 'space-between',
+    marginHorizontal: Metrics.doubleBaseMargin,
+    marginVertical: Metrics.baseMargin,
+  },
+  infoIconView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 32,
+    backgroundColor: '#efefef',
+    padding: 2,
+    width: 30,
+    height: 30,
   },
 });
