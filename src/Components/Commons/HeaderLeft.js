@@ -11,7 +11,7 @@ const HeaderLeft = () => {
         <Icon
           name="arrowleft"
           color={Colors.black}
-          size={Metrics.images.regular}
+          size={20}
           style={styles.iconWrap}
         />
       </View>
@@ -29,10 +29,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 32,
-    backgroundColor: Colors.backgroundColorLight,
     padding: 2,
-    width: 30,
+    width: 35,
     marginLeft: 15,
-    height: 30,
+    height: 35,
+    shadowColor: Colors.charcoalDarkGrey,
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.4,
+    shadowRadius: 1,
+    elevation: 2,
+    backgroundColor: Colors.white,
   },
 });
