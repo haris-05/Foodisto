@@ -66,9 +66,14 @@ const ProductCard = () => {
         style={{
           flexDirection: 'row',
           paddingTop: Metrics.baseMargin,
-          paddingHorizontal: Metrics.smallMargin + 2.5,
+          paddingHorizontal: Metrics.baseMargin,
         }}>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          style={{
+            paddingBottom: Metrics.baseMargin,
+          }}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}>
           <Product />
           <Product />
           <Product />
@@ -89,12 +94,12 @@ const styles = StyleSheet.create({
     marginTop: Metrics.doubleBaseMargin,
   },
   cardContainer: {
-    height: Metrics.screenWidth / 2.2,
+    height: Metrics.screenWidth / 2,
     width: Metrics.screenWidth / 3,
     backgroundColor: '#F3F3F3',
     alignItems: 'center',
     borderRadius: Metrics.baseMargin,
-    marginHorizontal: Metrics.smallMargin + 2.5,
+    marginHorizontal: Metrics.smallMargin,
   },
   imageStyle: {
     height: Metrics.screenWidth / 5,
