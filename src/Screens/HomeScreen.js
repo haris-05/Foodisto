@@ -50,6 +50,7 @@ const HomeScreen = () => {
         <SectionView types={types} />
         <SectionView types={types} />
         <ProductCard />
+        <View style={{height: Metrics.doubleBaseMargin * 3.5}} />
       </ScrollView>
       <Footer />
     </View>
@@ -60,12 +61,11 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: '100%',
     backgroundColor: Colors.white,
   },
   imageStyle: {
-    width: '100%',
-    height: '35%',
+    height: Metrics.screenWidth / 1.5,
+    width: Metrics.screenWidth,
     resizeMode: 'stretch',
   },
   rowStyle: {

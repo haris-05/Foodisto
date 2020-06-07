@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CheckBox, Divider} from 'react-native-elements';
-import {Colors, Metrics, Fonts, Images} from '../../GlobalAppStyles';
+import {Colors, Metrics} from '../../GlobalAppStyles';
 import {RowContainer, AppText} from './AppStyledComponents';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -22,7 +22,7 @@ const IngredentItem = () => {
               color={Colors.secondary}
             />
           }
-         // checked
+          // checked
         />
       </RowContainer>
       <Divider />
