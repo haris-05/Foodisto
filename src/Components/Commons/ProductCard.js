@@ -22,6 +22,24 @@ const products = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtBR3UOhmVrNC480dnoVS82eVDHreamOdURXcefVrRSVFj4rWTag&s',
     price: '30',
   },
+  {
+    name: 'pizza',
+    imageUrl:
+      'https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800',
+    price: '50',
+  },
+  {
+    name: 'burger',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUUl589gVFeyBuhIj03KMR1mvOS56lMFDbEXON9rbRLQrCpInL&s',
+    price: '70',
+  },
+  {
+    name: 'icecream',
+    imageUrl:
+      'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+    price: '200',
+  },
 ];
 
 const AddMinusButton = props => {

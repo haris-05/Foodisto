@@ -68,27 +68,6 @@ const ingredients = [
   },
 ];
 
-const products = [
-  {
-    name: 'pizza',
-    image_Url:
-      'https://www.freepik.com/free-photo/hawaiian-pizza_1026912.htm#page=1&query=pizza%20background&position=17',
-    price: '50',
-  },
-  {
-    name: 'burger',
-    image_Url:
-      'https://en.wikipedia.org/wiki/Hamburger#/media/File:RedDot_Burger.jpg',
-    price: '70',
-  },
-  {
-    name: 'icecream',
-    image_Url:
-      'https://en.wikipedia.org/wiki/Ice_cream#/media/File:Ice_cream_with_whipped_cream,_chocolate_syrup,_and_a_wafer_(cropped).jpg',
-    price: '200',
-  },
-];
-
 const HomeScreen = () => {
   const [isCollapsed, setCollapsed] = useState(false);
   return (
