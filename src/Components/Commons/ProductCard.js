@@ -4,6 +4,26 @@ import {View, StyleSheet, Image, ScrollView} from 'react-native';
 import {Metrics, Fonts} from '../../GlobalAppStyles';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
+const products = [
+  {
+    name: 'Tamato',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRndBlOorOGlBU5iOtFzM1eBTSnpF8gU97EJK7ebO0dYg1LDfek&usqp=CAU',
+    price: '25',
+  },
+  {
+    name: 'Bread',
+    imageUrl: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0a2.png',
+    price: '20',
+  },
+  {
+    name: 'Bengan',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtBR3UOhmVrNC480dnoVS82eVDHreamOdURXcefVrRSVFj4rWTag&s',
+    price: '30',
+  },
+];
+
 const AddMinusButton = props => {
   const {btnText, handler, value} = props;
   let color = '';
@@ -23,7 +43,8 @@ const AddMinusButton = props => {
   );
 };
 
-const Product = () => {
+const Product = ({product}) => {
+  const {name, imageUrl, price} = product;
   const [item, setItem] = React.useState(0);
 
   const itemInc = () => setItem(item + 1);
@@ -32,15 +53,15 @@ const Product = () => {
     <View style={styles.cardContainer}>
       <Image
         source={{
-          uri: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0a2.png',
+          uri: imageUrl,
         }}
         style={styles.imageStyle}
       />
       <AppText marginTop={Metrics.baseMargin} fontWeight="400">
-        Bread
+        {name}
       </AppText>
       <AppText marginTop={Metrics.smallMargin} fontWeight="400">
-        19 $
+        {price} $
       </AppText>
       <View style={styles.buttonsMainContainer}>
         <AddMinusButton btnText="-" handler={() => itemDec()} value={item} />
@@ -71,13 +92,16 @@ const ProductCard = () => {
           style={{paddingBottom: Metrics.baseMargin}}
           horizontal={true}
           showsHorizontalScrollIndicator={false}>
+          {products.map((product, index) => (
+            <Product product={product} />
+          ))}
+          {/* <Product />
           <Product />
           <Product />
           <Product />
           <Product />
           <Product />
-          <Product />
-          <Product />
+          <Product /> */}
         </ScrollView>
       </View>
     </View>
