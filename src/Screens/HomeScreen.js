@@ -80,13 +80,22 @@ const HomeScreen = () => {
             <Icon name="ios-information" size={Metrics.images.regular} />
           </View>
         </RowContainer>
-        <AppText
-          textColor={Colors.secondaryText}
-          marginStart={Metrics.doubleBaseMargin}
-          marginEnd={Metrics.doubleBaseMargin}
-          fontSize={Fonts.size.small}>
-          Ketchup, Mayonnise, Onions, Jalpenos, Cheese + Coke
-        </AppText>
+        <RowContainer>
+          <AppText
+            textColor={Colors.secondaryText}
+            marginStart={Metrics.doubleBaseMargin}
+            fontSize={Fonts.size.small}>
+            Ketchup, Mayonnise, O̶n̶i̶o̶n̶s̶, Jalpenos, Cheese +
+          </AppText>
+          <AppText
+            textColor={Colors.black}
+            fontSize={Fonts.size.small}
+            marginStart={2}
+            fontWeight={'bold'}>
+              Coke
+          </AppText>
+        </RowContainer>
+
         <ExpandableIngredientView
           isCollapsed={isCollapsed}
           setCollapsed={value => setCollapsed(value)}

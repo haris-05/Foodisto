@@ -6,7 +6,6 @@ import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 const AddMinusButton = props => {
   const {btnText, handler, value} = props;
-  console.log(value);
   let color = '';
   if (btnText == '-') {
     value > 0 ? (color = '#D62C24') : (color = '#C2C2C2');
