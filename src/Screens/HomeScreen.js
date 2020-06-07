@@ -72,7 +72,7 @@ const HomeScreen = () => {
   const [isCollapsed, setCollapsed] = useState(false);
   return (
     <View style={styles.mainContainer}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Image source={Images.rollParatha} style={styles.imageStyle} />
         <RowContainer style={styles.rowStyle}>
           <AppHeading>Chicken Roll Paratha</AppHeading>
