@@ -47,6 +47,27 @@ const types1 = [
   },
 ];
 
+const ingredients = [
+  {
+    value: 'Ketchup',
+  },
+  {
+    value: 'Mayonnise',
+  },
+  {
+    value: 'Onions',
+  },
+  {
+    value: 'Jalpenos',
+  },
+  {
+    value: 'Cheese',
+  },
+  {
+    value: 'Coke',
+  },
+];
+
 const HomeScreen = () => {
   const [isCollapsed, setCollapsed] = useState(false);
   return (
@@ -69,6 +90,7 @@ const HomeScreen = () => {
         <ExpandableIngredientView
           isCollapsed={isCollapsed}
           setCollapsed={value => setCollapsed(value)}
+          ingredientsList={ingredients}
         />
         <SectionView types={types1} />
         <SectionView types={types} />

@@ -21,13 +21,19 @@ const CollapsibleHeader = ({isCollapsed}) => {
     </RowContainer>
   );
 };
-const ExpandableIngredientView = ({isCollapsed, setCollapsed, data}) => {
+const ExpandableIngredientView = ({
+  isCollapsed,
+  setCollapsed,
+  ingredientsList,
+}) => {
   return (
     <TouchableWithoutFeedback onPress={() => setCollapsed(!isCollapsed)}>
       <View style={styles.expandableMainContainer}>
         <CollapsibleHeader isCollapsed={isCollapsed} />
         <Collapsible collapsed={isCollapsed}>
-          {<IngredentItem ingredients={data} />}
+          {ingredientsList.map(item => (
+            <IngredentItem ingredientItem={item} />
+          ))}
         </Collapsible>
       </View>
     </TouchableWithoutFeedback>
