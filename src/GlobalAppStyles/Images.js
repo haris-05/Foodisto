@@ -1,8 +1,7 @@
 // leave off @2x/@3x
 const IMAGES_DIR = '../../assets';
 const images = {
-  // loginBackroundImage
-    //mainBG: require(`${IMAGES_DIR}/main_img.jpg`),
+    rollParatha: require(`${IMAGES_DIR}/roll_paratha.png`),
   // logos
   //appLogo: require(`${IMAGES_DIR}/logo.jpeg`),
 

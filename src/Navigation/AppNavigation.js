@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {HeaderLeft, HeaderRight} from '../Components';
 
 import APP_ROUTES from './AppRoutes';
 import {HomeScreen} from '../Screens';
@@ -9,6 +9,14 @@ import {Colors, Metrics} from '../GlobalAppStyles';
 
 const Stack = createStackNavigator();
 
+const headerStyle = {
+  headerStyle: {
+    borderBottomWidth: 0,
+    elevation: 0,
+    shadowOpacity: 0,
+    backgroundColor: Colors.toolbarColor,
+  },
+};
 const AppNavigator = () => {
   return (
     <Stack.Navigator
@@ -20,7 +28,10 @@ const AppNavigator = () => {
         name={APP_ROUTES.HOME_SCREEN}
         component={HomeScreen}
         options={({navigation, route}) => ({
-          headerShown: false,
+          ...headerStyle,
+          title: '',
+          headerLeft: props => <HeaderLeft navigation={navigation} />,
+          headerRight: props => <HeaderRight navigation={navigation} />,
         })}
       />
     </Stack.Navigator>

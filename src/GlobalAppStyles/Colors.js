@@ -8,6 +8,8 @@ const colors = {
   white: '#ffffff',
   black: '#333333',
   transparent: 'transparent',
+  backgroundColorLight: '#efefef',
+  //toolbarColor: '#e7ecf0',
 };
 
 export default colors;
