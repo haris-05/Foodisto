@@ -23,7 +23,7 @@ const types = [
     selected: false,
   },
   {
-    name: 'Kethup',
+    name: 'Ketchup',
     selected: false,
   },
   {
